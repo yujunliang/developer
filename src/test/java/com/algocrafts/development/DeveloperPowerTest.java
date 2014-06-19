@@ -25,7 +25,6 @@ public class DeveloperPowerTest {
 
     @Test
     public void whenBuildIsGreen() throws FileChangedException, InvalidPasswordException {
-
         activities = createMock(Activities.class);
         activities.standupMeeting();
         expectLastCall();
