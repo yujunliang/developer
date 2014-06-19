@@ -16,14 +16,14 @@ public class Developer {
 
     private final EnumSet<Skill> skillSet;
 
-    private final SVN svn;
+    private final VersionControl versionControl;
     private final Build build;
     private final Activities activities;
 
-    public Developer(String name, EnumSet<Skill> skillSet, SVN svn, Build build, Activities activities) {
+    public Developer(String name, EnumSet<Skill> skillSet, VersionControl versionControl, Build build, Activities activities) {
         this.name = name;
         this.skillSet = skillSet;
-        this.svn = svn;
+        this.versionControl = versionControl;
         this.build = build;
         this.activities = activities;
     }
@@ -36,7 +36,7 @@ public class Developer {
                 if (log.isInfoEnabled()) {
                     log.info("Checking in files, " + files);
                 }
-                svn.checkin(files);
+                versionControl.checkin(files);
             } catch (InvalidPasswordException e) {
                 log.error("Your password has expired", e);
             } catch (FileChangedException e) {

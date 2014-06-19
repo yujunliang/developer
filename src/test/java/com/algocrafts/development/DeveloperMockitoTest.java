@@ -14,7 +14,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class DeveloperMockitoTest {
 
-    @Mock private SVN svn;
+    @Mock private VersionControl svn;
     @Mock private Build build;
     @Mock private Activities activities;
     @Mock private EnumSet<Skill> skillSet;

@@ -15,10 +15,10 @@ import static org.easymock.EasyMock.expect;
 import static org.powermock.api.easymock.PowerMock.*;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({Developer.class, SVN.class, Build.class, Activities.class})
+@PrepareForTest({Developer.class, VersionControl.class, Build.class, Activities.class})
 public class DeveloperPowerTest {
 
-    private SVN svn;
+    private VersionControl svn;
     private Build build;
     private Activities activities;
     private EnumSet<Skill> skillSet;
@@ -35,7 +35,7 @@ public class DeveloperPowerTest {
         build = createMock(Build.class);
         expect(build.isGreen()).andReturn(true);
 
-        svn = createMock(SVN.class);
+        svn = createMock(VersionControl.class);
         svn.checkin(files);
         expectLastCall();
 

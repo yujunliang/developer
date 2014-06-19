@@ -17,10 +17,10 @@ import static org.easymock.EasyMock.expect;
 import static org.powermock.api.easymock.PowerMock.*;
 
 @RunWith(PowerMockRunner.class)
-@PrepareForTest({Developer.class, SVN.class, Build.class, Activities.class})
+@PrepareForTest({Developer.class, VersionControl.class, Build.class, Activities.class})
 public class DeveloperPower1Test {
 
-    private SVN svn;
+    private VersionControl svn;
     private Build build;
     private Activities activities;
     private EnumSet<Skill> skillSet;
@@ -31,7 +31,7 @@ public class DeveloperPower1Test {
         testWithMock(true, new Runnable() {
             @Override
             public void run() {
-                svn = PowerMock.createMock(SVN.class);
+                svn = PowerMock.createMock(VersionControl.class);
                 try {
                     svn.checkin(files);
                 } catch (InvalidPasswordException e) {
