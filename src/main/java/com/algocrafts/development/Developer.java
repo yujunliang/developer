@@ -29,6 +29,7 @@ public class Developer {
     }
 
     public void work() {
+
         activities.standupMeeting();
         List<File> files = activities.tdd();
         if (build.isGreen()) {
