@@ -4,6 +4,7 @@ import com.algocrafts.algorithms.Skill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.EnumSet;
@@ -33,18 +34,24 @@ public class DeveloperMockitoTest {
         verify(svn).checkin(files);
         verify(activities, never()).drinkCoffee();
         verify(activities).lunch();
+        verify(activities, times(2)).tdd();
+        verifyNoMoreInteractions(activities);
     }
 
     @Test
     public void whenBuildIsNotGreen() throws FileChangedException, InvalidPasswordException {
 
         when(build.isGreen()).thenReturn(false);
-        when(activities.tdd()).thenReturn(files) ;
+        when(activities.tdd()).thenReturn(files);
+        when(activities.tdd()).thenReturn(files);
 
         new Developer(name, skillSet, svn, build, activities).work();
+        verify(build).isGreen();
         verify(activities).standupMeeting();
         verify(svn, never()).checkin(files);
         verify(activities).drinkCoffee();
         verify(activities).lunch();
+        verify(activities, times(2)).tdd();
+        verifyNoMoreInteractions(activities, build, svn);
     }
 }

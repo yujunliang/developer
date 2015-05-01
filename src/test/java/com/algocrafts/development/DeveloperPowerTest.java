@@ -21,7 +21,6 @@ public class DeveloperPowerTest {
     private VersionControl svn;
     private Build build;
     private Activities activities;
-    private EnumSet<Skill> skillSet;
 
     @Test
     public void whenBuildIsGreen() throws FileChangedException, InvalidPasswordException {
@@ -43,7 +42,7 @@ public class DeveloperPowerTest {
 
         replayAll();
 
-        new Developer(null, skillSet, svn, build, activities).work();
+        new Developer(null, null, svn, build, activities).work();
         verifyAll();
     }
 
@@ -68,7 +67,7 @@ public class DeveloperPowerTest {
 
         replayAll();
 
-        new Developer(null, skillSet, svn, build, activities).work();
+        new Developer(null, null, svn, build, activities).work();
         verifyAll();
     }
 
