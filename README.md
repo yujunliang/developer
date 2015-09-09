@@ -1,4 +1,4 @@
 # developer
 Developer Behaviour
 
-https://travis-ci.org/yujunliang/developer.svg?branch=master
+[![Build Status](https://travis-ci.org/yujunliang/developer.svg?branch=master)](https://travis-ci.org/yujunliang/developer)
