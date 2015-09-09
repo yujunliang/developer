@@ -4,7 +4,6 @@ import com.algocrafts.algorithms.Skill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.EnumSet;

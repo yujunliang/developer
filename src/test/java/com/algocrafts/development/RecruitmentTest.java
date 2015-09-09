@@ -54,12 +54,4 @@ public class RecruitmentTest {
         assertEquals("Wendy", hired.get(1).getName());
     }
 
-    @Test
-    public void testHire4() throws Exception {
-        Stream<Developer> hired = recruitment.hire4(JAVA, C_SHARP);
-  //      assertEquals(2, hired.count());
-        List<Developer> list = hired.collect(Collectors.<Developer>toList());
-        assertEquals("Weidong", list.get(0).getName());
-        assertEquals("Wendy", list.get(1).getName());
-    }
 }
